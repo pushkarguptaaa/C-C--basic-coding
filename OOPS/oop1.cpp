@@ -54,7 +54,7 @@ class Employee:AbstractEmployee{
         std::cout<<Name<< " , sorry NO promotion for you!"<<std::endl;
     }
 
-    void Work(){
+    virtual void Work(){
         std::cout<<Name<< " is checking email, task backlog, performing tasks..."<<std::endl;
     }
 };
@@ -119,4 +119,10 @@ int main(){
 
     d.Work();
     t.Work();
+
+    Employee *e1 = &d;
+    Employee *e2 = &t;
+
+    e1->Work();
+    e2->Work();
 }
